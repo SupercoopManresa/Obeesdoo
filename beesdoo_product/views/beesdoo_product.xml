@@ -46,8 +46,8 @@
                         </group>
                     </group>
                     <group>
-                        <field name="fds_label"/>
-                        <field name="hazard_label"/>
+                        <field name="fds_label" widget="selection"/>
+                        <field name="hazard_label" widget="selection"/>
                     </group>
                     <group>
                         <field name="note"/>

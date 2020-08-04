@@ -15,23 +15,35 @@ class BeesdooProduct(models.Model):
     _inherit = "product.template"
 
     eco_label = fields.Many2one(
-        "beesdoo.product.label", domain=[("type", "=", "eco")]
+        "beesdoo.product.label",
+        domain=[("type", "=", "eco")]
     )
     local_label = fields.Many2one(
-        "beesdoo.product.label", domain=[("type", "=", "local")]
+        "beesdoo.product.label",
+        domain=[("type", "=", "local")]
     )
     fair_label = fields.Many2one(
-        "beesdoo.product.label", domain=[("type", "=", "fair")]
+        "beesdoo.product.label",
+        domain=[("type", "=", "fair")]
     )
     origin_label = fields.Many2one(
-        "beesdoo.product.label", domain=[("type", "=", "delivery")]
+        "beesdoo.product.label",
+        domain=[("type", "=", "delivery")]
     )
 
     fds_label = fields.Many2one(
-        "beesdoo.product.hazard", string="FDS label", domain=[("type", "=", "fds")], translate=True, default=lambda self: self.env['beesdoo.product.hazard'].search([["type", "=", "fds"],["name", "=", "Not required"]])
+        "beesdoo.product.hazard",
+        string="FDS label",
+        domain=[("type", "=", "fds")],
+        translate=True,
+        default=lambda self: self.env['beesdoo.product.hazard'].search([["type", "=", "fds"],["name", "=", "Not required"]])
     )
     hazard_label = fields.Many2one(
-        "beesdoo.product.hazard", string="Hazard label", domain=[("type", "=", "hazard")], translate=True, default=lambda self: self.env['beesdoo.product.hazard'].search([["type", "=", "hazard"],["name", "=", "No"]])
+        "beesdoo.product.hazard",
+        string="Hazard label",
+        domain=[("type", "=", "hazard")],
+        translate=True,
+        default=lambda self: self.env['beesdoo.product.hazard'].search([["type", "=", "hazard"],["name", "=", "No"]])
     )
 
     main_seller_id = fields.Many2one(
