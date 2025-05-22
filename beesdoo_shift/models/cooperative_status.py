@@ -289,6 +289,8 @@ class CooperativeStatus(models.Model):
 
         Shift in the past will not be changed !
         """
+        if not cur_start_date or not cur_end_date:
+            return
         self.ensure_one()
         today = self.today or fields.Date.today()
         self.env["beesdoo.shift.shift"].unsubscribe_from_today(
