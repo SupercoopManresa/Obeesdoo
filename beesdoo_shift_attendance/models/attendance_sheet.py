@@ -451,7 +451,7 @@ class AttendanceSheet(models.Model):
                         "worker_id": task.worker_id.id,
                         "replaced_id": task.replaced_id.id,
                         "task_type_id": task.task_type_id.id,
-                        "state": "absent_2",
+                        "state": "absent_1",
                         "working_mode": task.working_mode,
                         "is_compensation": task.is_compensation,
                     }
